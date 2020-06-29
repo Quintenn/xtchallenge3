@@ -1,3 +1,10 @@
+body {
+    background-color: #003456;
+    font-family: 'Space Mono', monospace;
+    font-style: italic;
+    color: #eee;
+}
+
 .grid-container {
     display: grid;
     grid-gap: 1em;
@@ -9,6 +16,9 @@
     padding: 1em;
     border-radius: 1em;
     text-align: center;
+    box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+    background-color: #002e4d;
+    color: white;
 }
 
 .grid-item1 {
