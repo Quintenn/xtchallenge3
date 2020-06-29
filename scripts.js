@@ -158,3 +158,5 @@ $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&
 //Één van de redenen dat dit niet volledig is gelukt is als volgt: Ik kon niet goed de waardes van allebei de API's samenvoegen om 1 waarde te vormen. Dit kwam vooral door wat problemen met global variables en variables in een functie. Ik probeerde dit nog te fixen door 2 API's in 1 functie op te roepen (zie regel 88) maar dit bleek met de tijd die ik had niet mogelijk te zijn.
 //
 //Een andere rede is omdat ik niet wist hoe ik de namen in de dropdown lijst moest linken aan de locatiedata van allebei de API's. Vandaar ook dat de app nu standaard zoekt naar het weer in Madrid en naar globale COVID-19 statistieken.
+//
+//In principe werkt het systeem wel, maar alleen om het weer in Madrid te laten zien, de wereldwijde COVID-19 confirmed cases, en advies dat alleen gebaseerd is op die cases en niet op het weer.
