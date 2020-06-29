@@ -32,9 +32,9 @@ $.getJSON("https://api.covid19api.com/summary", function (data) {
 });
 
 //WEATHERAPI
-$.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&appid=f1f72acbd4642e54bfd47e688bcb8f51", function (data) {
+$.getJSON("https://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&appid=f1f72acbd4642e54bfd47e688bcb8f51", function (data) {
     console.log(data);
-    var icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png",
+    var icon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png",
         weather = data.weather[0].main,
         temp = Math.floor(data.main.temp),
         advice = document.getElementById('advice').innerHTML,
