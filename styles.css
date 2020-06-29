@@ -17,7 +17,7 @@ body {
     padding: 0.5em;
     border-radius: 1em;
     text-align: center;
-    box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+    box-shadow: 0 5px 5px 0 rgba(255, 255, 255, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
     background-color: #002e4d;
     color: white;
 }
@@ -36,10 +36,6 @@ body {
     grid-row: 2;
 }
 
-.grid-item2 p {
-/*    display: inline;*/
-}
-
 .grid-item3 {
     grid-column: 1;
     grid-row: 3;
@@ -52,29 +48,59 @@ body {
 
 /*Large Mobile Display (Iphone Plus, Pixel XL, Samsung Note, etc.*/
 @media screen and (min-width: 450px){
-    .grid-item {
-        background-color: white;
+    .grid-item2, .grid-item3 {
+        height: 30vh;
     }
 }
 
 /*Ipad Display*/
 @media screen and (min-width: 768px){
     .grid-item {
-        background-color: red;
+        background: #eee;
+        padding: 1em;
+        border-radius: 1em;
+        text-align: center;
+        box-shadow: 0 5px 5px 0 rgba(255, 255, 255, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+        background-color: #002e4d;
+        color: white;
     }
+    
+    .grid-item2, .grid-item3 {
+    height: 65vh;
+    }
+    
+    .grid-item1 {
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+
+    .grid-item2 {
+        grid-column: 1/2;
+        grid-row: 2;
+    }
+
+    .grid-item3 {
+        grid-column: 2/3;
+        grid-row: 2;
+    }
+
+    .grid-item4 {
+        grid-column: 1/3;
+        grid-row: 3;
+        height: 17vh;
 }
 
 /*Desktop Display*/
 @media screen and (min-width: 1280px){
 
     .grid-item {
-    background: #eee;
-    padding: 1em;
-    border-radius: 1em;
-    text-align: center;
-    box-shadow: 0 5px 5px 0 rgba(255, 255, 255, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
-    background-color: #002e4d;
-    color: white;
+        background: #eee;
+        padding: 1em;
+        border-radius: 1em;
+        text-align: center;
+        box-shadow: 0 5px 5px 0 rgba(255, 255, 255, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+        background-color: #002e4d;
+        color: white;
     }
 
     .grid-item2, .grid-item3 {
