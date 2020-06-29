@@ -1,6 +1,7 @@
 //VARIABLES FOR CALLING API'S
-var covidCall = 1;
-var weatherCall = 1;
+//var cityName = 'Madrid';
+//var covidCall = 1;
+//var weatherCall = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&appid=f1f72acbd4642e54bfd47e688bcb8f51";
 
 //COVIDAPI
 $.getJSON("https://api.covid19api.com/summary", function (data) {
@@ -10,11 +11,7 @@ $.getJSON("https://api.covid19api.com/summary", function (data) {
     console.log(cases);
     $('.cases').append(cases);
     
-    
-    
-    
-    
-//      THIS IS ALL FOR ADVICES
+//      THIS IS ALL FOR ADVICES (read below)
 //    if (cases>=5000){
 //        document.getElementById('advice').innerHTML="Because of the numerous cases of COVID-19 in this country, it is not recommended as a landing spot.";
 //    }else{
@@ -43,15 +40,17 @@ $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&
         weather = data.weather[0].main,
         temp = Math.floor(data.main.temp),
         advice = document.getElementById('advice').innerHTML,
+        location = data.name,
         value2;
     
     $('.icon').attr('src', icon);
     $('.weather').append(weather);
     $('.temp').append(temp);
+    $('.location').append(location);
     
     
     
-//      THIS IS ALL FOR THE ADVICE
+//      THIS IS ALL FOR THE ADVICE (read below)
 //    if (temp <= 0){
 //        value2 = 1;
 //    }else if (temp <= 9){
@@ -83,7 +82,7 @@ $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&
 
 
 
-//advice test
+//      TESTING FOR ADVICES
 //
 //$.when($.getJSON("https://api.covid19api.com/summary"), $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&appid=f1f72acbd4642e54bfd47e688bcb8f51")).done(function(data1, data2) {
 //    var value1, value2, value3 = (value1 + value2) /2;

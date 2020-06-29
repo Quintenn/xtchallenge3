@@ -21,6 +21,10 @@ body {
     color: white;
 }
 
+.grid-item2, .grid-item3 {
+    height: 70vh;
+}
+
 .grid-item1 {
     grid-column: 1/3;
     grid-row: 1;
