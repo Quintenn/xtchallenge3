@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link href="styles.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="scripts.js"></script>
+    </head>
+    <body>
+        <div class="grid-container">
+            <!--header+country selector-->
+            <div class="grid-item grid-item1">
+                <p>Where would you like to land?</p>
+                <select name="country" id="country">
+                    <option value="AF">Afghanistan</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="NO">Norway</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="US">United States</option>
+                </select>
+            </div>
+            <!--weather api-->
+            <div class="grid-item grid-item2">
+                <img class="icon">
+                <p class="weather"></p>
+                <p class="temp"></p>
+            </div>
+            <!--covid api-->
+            <div class="grid-item grid-item3">
+                <p class="cases">The amount of COVID-19 cases in this country is </p>
+                <p class="populationPercentage"></p>
+            </div>        
+            <!--advice-->
+            <div class="grid-item grid-item4">
+                <div id="advice">
+                    <p id="spotvalue"></p> <p id="advice"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
