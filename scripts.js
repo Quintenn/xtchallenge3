@@ -44,8 +44,8 @@ $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&
         value2;
     
     $('.icon').attr('src', icon);
-    $('.weather').append(weather);
-    $('.temp').append(temp);
+    $('.weather').append('The weather is' + ' ' + weather);
+    $('.temp').append('Right now, it is ' + temp + ' ' + 'degrees Celsius.');
     $('.location').append(location);
     
     
