@@ -1,43 +1,94 @@
 //values and vars
-var value1;
-var value2;
-
+//var value1;
+//
 
 //COVIDAPI
 $.getJSON("https://api.covid19api.com/summary", function(data){
-    console.log(data);
+ //   console.log(data);
     var cases = data.Global.TotalConfirmed;
-    var advice = document.getElementById('advice').innerHTML;
-//    var populationPercentage = ;
-    console.log(cases);
+//    var advice = document.getElementById('advice').innerHTML;
+ //   console.log(cases);
     $('.cases').append(cases);
 //    if (cases>=5000){
 //        document.getElementById('advice').innerHTML="Because of the numerous cases of COVID-19 in this country, it is not recommended as a landing spot.";
 //    }else{
 //        document.getElementById('advice').innerHTML="This country is deemed relatively safe from COVID-19, therefore it will be a suitable landing spot.";
 //    }
-    
-    if (cases >= 100000){
-        value1 = 1;
-    }else if (temp <=99999){
-        value1 = 2;  
-    }else if (temp <=50000){
-        value1 = 3;  
-    }else if (temp <=10000){
-        value1 = 4;  
-    }else if (temp <=5000){
-        value1 = 5;  
-    }    
-    console.log(value1);  
+
+//    if (cases >= 100000){
+//        value1 = 1;
+//    }else if (cases <=99999){
+//        value1 = 2;  
+//    }else if (cases <=50000){
+//        value1 = 3;  
+//    }else if (cases <=10000){
+//        value1 = 4;  
+//    }else if (cases <=5000){
+//        value1 = 5;  
+//    }    
+//    console.log(value1);  
 });
 
 
 //WEATHERAPI
 $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&appid=f1f72acbd4642e54bfd47e688bcb8f51", function(data){
-    console.log(data);
+  //  console.log(data);
     var icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png"; 
     var weather = data.weather[0].main;
     var temp = Math.floor(data.main.temp);
+    var advice = document.getElementById('advice').innerHTML;
+    var value2;
+    
+    if (temp <= 0){
+        value2 = 1;
+    }else if (temp <= 9){
+        value2 = 2;
+    }else if (temp <=19){
+        value2 = 3;
+    }else if (temp <= 29){
+        value2 = 4;
+    }else if (temp <= 40){
+        value2 = 5;
+    }
+   // console.log(value2);
+    $('.icon').attr('src', icon);
+    $('.weather').append(weather);
+    $('.temp').append(temp);
+    
+//    var value3 = (value1 + value2) / 2;
+   // console.log(value3);   
+//    if (value3 <= 1.49){
+//        document.getElementById('advice').innerHTML="Dit is echt een kut plek.";
+//    }else if (value3 <= 2.49 ){
+//        document.getElementById('advice').innerHTML="Dit is een kut plek";
+//    }else if (value3 <= 3.49 ){
+//        document.getElementById('advice').innerHTML="Je kan hier best landen";
+//    }else if (value3 <= 4.49 ){
+//        document.getElementById('advice').innerHTML="Dit is een goeie plek";
+//    }else if (value3 <= 5 ){
+//        document.getElementById('advice').innerHTML="Dit is echt een goeie plek";
+//    }     
+});
+//advice test
+
+$.when($.getJSON("https://api.covid19api.com/summary"), $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&appid=f1f72acbd4642e54bfd47e688bcb8f51")).done(function(data1, data2) {
+    var value1, value2, value3 = (value1 + value2) /2;
+    var weather = data2.weather[0].main;
+    var temp = Math.floor(data2.main.temp);
+    var advice = document.getElementById('advice').innerHTML;
+    var cases = data1.Global.TotalConfirmed;
+    
+    if (cases >= 100000){
+        value1 = 1;
+    }else if (cases <=99999){
+        value1 = 2;  
+    }else if (cases <=50000){
+        value1 = 3;  
+    }else if (cases <=10000){
+        value1 = 4;  
+    }else if (cases <=5000){
+        value1 = 5;  
+    }    
     
     if (temp <= 0){
         value2 = 1;
@@ -51,14 +102,6 @@ $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&
         value2 = 5;
     }
     
-    console.log(value2);
-//  console.log(icon);
-    
-    $('.icon').attr('src', icon);
-    $('.weather').append(weather);
-    $('.temp').append(temp);
-    
-    var value3 = (value1 + value2) / 2;
     if (value3 <= 1.49){
         document.getElementById('advice').innerHTML="Dit is echt een kut plek.";
     }else if (value3 <= 2.49 ){
@@ -70,9 +113,10 @@ $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&
     }else if (value3 <= 5 ){
         document.getElementById('advice').innerHTML="Dit is echt een goeie plek";
     }
-    console.log(value3);        
+    console.log(value1);
+    console.log(value2);
+    console.log(value3);
 });
-//advice test
 
 
 //select country function
